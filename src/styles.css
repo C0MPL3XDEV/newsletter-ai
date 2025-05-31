@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+@font-face {
+  src: url('/fonts/satoshi/Satoshi-Variable.ttf');
+  font-family: Satoshi;
+  font-weight: 300 900;
+}
+
+:root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Satoshi", system-ui, -apple-system, BlinkMacSystemFont,
+  "Segoe UI", Roboto, Oxygen, Cantarell, "Open Sans", "Helvetica Neue",
+  sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Satoshi", system-ui, -apple-system, BlinkMacSystemFont,
+  "Segoe UI", Roboto, Oxygen, Cantarell, "Open Sans", "Helvetica Neue",
+  sans-serif;
+  scroll-behavior: smooth;
+}
