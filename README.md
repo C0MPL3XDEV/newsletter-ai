@@ -1,6 +1,6 @@
-# CarminedevNewsletter
-
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.10.
+# AI Driven Newsletter
+## Project Description:
+### AI-powered tech newsletter for developers and cybersecurity enthusiasts. Curated daily or bi-weekly content on the latest trends in programming, hacking, infosec, devops etc....
 
 ## Development server
 
