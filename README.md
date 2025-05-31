@@ -1,7 +1,11 @@
-# AI Driven Newsletter
-## Project Description:
-### AI-powered tech newsletter for developers and cybersecurity enthusiasts. Curated daily or bi-weekly content on the latest trends in programming, hacking, infosec, devops etc....
+# 📨 AI-Powered Tech Newsletter
 
+A customizable AI-driven newsletter generator focused on technology, software development, hacking, and cybersecurity.  
+Users select their topics of interest, and the AI delivers curated content via email daily or bi-weekly.
+
+> ⚠️ This is a free and open-source project, but **commercial use is restricted**.
+> If you want to use it in a paid product or service, you must contact the author for a commercial license.
+---
 ## Development server
 
 To start a local development server, run:
@@ -57,3 +61,12 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+---
+## 📄 License
+
+This project is licensed under the **GNU AGPLv3** with a **Commons Clause** restriction.  
+See the [LICENSE](./LICENSE) file for full details.
+
+Commercial usage is not permitted without prior approval.  
+Contact: `carminech@proton.me`
