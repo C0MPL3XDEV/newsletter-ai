@@ -1,16 +1,13 @@
 import { Component } from '@angular/core';
+import {TopbarComponent} from '../topbar/topbar.component';
 
 @Component({
   selector: 'app-coming-soon',
-  imports: [],
+  imports: [
+    TopbarComponent
+  ],
   templateUrl: './coming-soon.component.html',
   styleUrl: './coming-soon.component.css'
 })
 export class ComingSoonComponent {
-
-  onSubmit() {
-
-  }
-
-  date = new Date();
 }
