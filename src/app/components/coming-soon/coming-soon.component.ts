@@ -10,4 +10,7 @@ import {TopbarComponent} from '../topbar/topbar.component';
   styleUrl: './coming-soon.component.css'
 })
 export class ComingSoonComponent {
+
+  date = new Date();
+
 }
