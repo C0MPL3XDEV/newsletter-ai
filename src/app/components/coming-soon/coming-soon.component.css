@@ -86,3 +86,9 @@
   height: 220px;
   opacity: 1;
 }
+
+@media (max-width: 640px) {
+    .notify-btn {
+      margin-top: 4px;
+    }
+}
