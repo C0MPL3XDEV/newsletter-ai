@@ -26,3 +26,6 @@ body {
   scroll-behavior: smooth;
 }
 
+.custom-ripple > .om-ripple-background {
+  transform: scale(1.3);
+}

@@ -88,7 +88,7 @@
 }
 
 @media (max-width: 640px) {
-    .notify-btn {
-      margin-top: 4px;
-    }
+  .notify-btn {
+    margin-top: 4px;
+  }
 }
