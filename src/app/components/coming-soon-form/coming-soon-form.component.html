@@ -10,7 +10,7 @@
     <button
       type="submit"
       class="w-full sm:w-auto relative inline-flex items-center justify-center px-6 py-3 overflow-hidden text-sm font-medium text-white transition rounded-lg group bg-gradient-to-br from-purple-500 via-pink-500 to-red-500 hover:from-pink-600 hover:to-purple-600 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
-      [disabled]="form.invalid || buttonState === 'loading'"
+      [disabled]="form.invalid || buttonState === 'loading' || buttonState === 'success'"
     >
       <span class="mr-2" *ngIf="buttonState === 'idle'">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
