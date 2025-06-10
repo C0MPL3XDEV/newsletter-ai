@@ -1,1 +1,47 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+@font-face {
+  src: url('/fonts/satoshi/Satoshi-Variable.ttf');
+  font-family: Satoshi;
+  font-weight: 300 900;
+}
+
+:root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Satoshi", system-ui, -apple-system, BlinkMacSystemFont,
+  "Segoe UI", Roboto, Oxygen, Cantarell, "Open Sans", "Helvetica Neue",
+  sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Satoshi", system-ui, -apple-system, BlinkMacSystemFont,
+  "Segoe UI", Roboto, Oxygen, Cantarell, "Open Sans", "Helvetica Neue",
+  sans-serif;
+  scroll-behavior: smooth;
+}
+
+.custom-ripple > .om-ripple-background {
+  transform: scale(1.1);
+}
+
+.toast-success {
+  background-color: #16a34a !important;
+  color: white !important;
+  font-weight: 500;
+}
+
+.toast-error {
+  background-color: #dc2626 !important;
+  color: white !important;
+  font-weight: 500;
+}
+
+.toast-close-button {
+  color: white !important;
+}
