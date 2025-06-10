@@ -28,17 +28,17 @@ body {
 
 .custom-ripple > .om-ripple-background {
   transform: scale(1.2);
-  filter: blur(3px);
+  filter: blur(2px);
 }
 
 .toast-success {
-  background-color: #16a34a !important; /* verde Tailwind */
+  background-color: #16a34a !important;
   color: white !important;
   font-weight: 500;
 }
 
 .toast-error {
-  background-color: #dc2626 !important; /* rosso Tailwind */
+  background-color: #dc2626 !important;
   color: white !important;
   font-weight: 500;
 }
