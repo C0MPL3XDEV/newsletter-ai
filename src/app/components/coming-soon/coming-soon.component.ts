@@ -25,12 +25,12 @@ export class ComingSoonComponent implements OnInit {
   constructor(private apiService: ApiService) {
   }
 
-  testCall: any;
+  testCallResponse: any;
 
   ngOnInit() {
     this.apiService.testCall().subscribe({
       next: (response) => {
-        this.testCall = response;
+        this.testCallResponse = response;
       }
     })
   }
