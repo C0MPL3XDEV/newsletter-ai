@@ -1,0 +1,27 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="relative w-full">
+  <div class="flex flex-row items-center gap-2 w-full">
+    <input
+      formControlName="email"
+      type="email"
+      placeholder="Enter your email"
+      class="flex-1 px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 bg-white/30 border-none"
+    />
+
+    <button type="submit"
+            class="relative inline-flex items-center justify-center px-6 py-3 overflow-hidden text-sm font-medium text-white transition rounded-lg group bg-gradient-to-br from-purple-500 via-pink-500 to-red-500 hover:from-pink-600 hover:to-purple-600 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+            [disabled]="form.invalid || buttonState === 'loading'">
+
+      <span class="mr-2" *ngIf="buttonState === 'idle'"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                             viewBox="0 0 16 16"><path fill="currentColor"
+                                                                                       fill-rule="evenodd"
+                                                                                       d="M7.29 13.904L5.25 10.75L2.096 8.71a2.4 2.4 0 0 1 .5-4.278l9.273-3.296a2.346 2.346 0 0 1 2.996 2.995L13.45 3.63a.844.844 0 0 0-1.08-1.08L3.1 5.846a.9.9 0 0 0-.19 1.604l2.78 1.799l3.279-3.28a.75.75 0 1 1 1.06 1.061L6.75 10.31l1.799 2.779a.9.9 0 0 0 1.604-.188l3.297-9.272l1.413.502l-3.296 9.273a2.4 2.4 0 0 1-4.277.5"
+                                                                                       clip-rule="evenodd"/></svg></span>
+      <span *ngIf="buttonState === 'idle'">Subscribe</span>
+      <span *ngIf="buttonState === 'loading'" class="flex items-center gap-2">
+        <span class="h-4 w-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+        Subscribing...
+      </span>
+      <span *ngIf="buttonState === 'success'">Subscribed!</span>
+    </button>
+  </div>
+</form>

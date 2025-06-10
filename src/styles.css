@@ -30,3 +30,19 @@ body {
   transform: scale(1.2);
   filter: blur(3px);
 }
+
+.toast-success {
+  background-color: #16a34a !important; /* verde Tailwind */
+  color: white !important;
+  font-weight: 500;
+}
+
+.toast-error {
+  background-color: #dc2626 !important; /* rosso Tailwind */
+  color: white !important;
+  font-weight: 500;
+}
+
+.toast-close-button {
+  color: white !important;
+}
