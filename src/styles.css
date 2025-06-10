@@ -28,7 +28,6 @@ body {
 
 .custom-ripple > .om-ripple-background {
   transform: scale(1.2);
-  filter: blur(2px);
 }
 
 .toast-success {
