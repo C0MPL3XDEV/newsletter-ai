@@ -18,6 +18,9 @@ export class ApiService {
   }
 
   public testCall(): Observable<any> {
+
+    console.log('Test call', this.apiUrl);
+
     return this.http.get(this.apiUrl + '/');
   }
 }
