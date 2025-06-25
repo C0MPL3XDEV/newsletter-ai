@@ -5,10 +5,11 @@ import {routes} from './app.routes';
 import {provideClientHydration, withEventReplay} from '@angular/platform-browser';
 import {provideAnimations} from '@angular/platform-browser/animations';
 import {provideToastr} from 'ngx-toastr';
-import {provideHttpClient} from '@angular/common/http';
+import {provideHttpClient, withFetch, withInterceptors} from '@angular/common/http';
+import {browserOnlyInterceptor} from './interceptors/browser-only.interceptor';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({eventCoalescing: true}), provideRouter(routes), provideHttpClient(), provideClientHydration(withEventReplay()), provideAnimations(), provideToastr({
+  providers: [provideZoneChangeDetection({eventCoalescing: true}), provideRouter(routes), provideHttpClient(), provideHttpClient(withInterceptors([browserOnlyInterceptor]), withFetch()), provideClientHydration(withEventReplay()), provideAnimations(), provideToastr({
     positionClass: 'toast-top-right',
     timeOut: 4000,
     closeButton: true,

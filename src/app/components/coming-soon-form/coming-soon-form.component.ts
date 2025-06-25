@@ -2,6 +2,8 @@ import {Component, inject} from '@angular/core';
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {ToastrService} from 'ngx-toastr';
 import {NgIf} from '@angular/common';
+import {ApiService} from '../../api.service';
+import {HttpErrorResponse} from '@angular/common/http';
 
 @Component({
   selector: 'app-coming-soon-form',
@@ -12,10 +14,14 @@ import {NgIf} from '@angular/common';
   templateUrl: './coming-soon-form.component.html',
   styleUrl: './coming-soon-form.component.css'
 })
+
 export class ComingSoonFormComponent {
   form = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email])
   });
+
+  constructor(private apiService: ApiService) {
+  }
 
   buttonState: 'idle' | 'loading' | 'success' = 'idle';
   private toastr = inject(ToastrService);
@@ -24,16 +30,19 @@ export class ComingSoonFormComponent {
     if (this.form.invalid) return;
     this.buttonState = 'loading';
 
-    // Simula una chiamata API
-    setTimeout(() => {
-      const isSuccess = Math.random() > 0.2; // Simula successo/errore
-      if (isSuccess) {
-        this.buttonState = 'success';
-        this.toastr.success('You have been subscribed!', 'Success 🎉');
-      } else {
+    const email = this.form.value.email ?? "";
+
+    this.apiService.subscribe(email).subscribe({
+      next: (response) => {
+        if (response.success) {
+          this.buttonState = 'success';
+          this.toastr.success('You have been subscribed!', 'Success 🎉');
+        }
+      },
+      error: (error: HttpErrorResponse) => {
         this.buttonState = 'idle';
-        this.toastr.error('Something went wrong. Try again!', 'Error 😢');
+        this.toastr.error('Something went wrong. Try again!' + error.message, 'Error 😢');
       }
-    }, 1500);
+    });
   }
 }
