@@ -13,8 +13,8 @@ export class ApiService {
 
   private apiUrl = environment.apiUrl;
 
-  public subscribe(email: string): Observable<any> {
-    return this.http.post(this.apiUrl + '/subscribe', {email: email});
+  public subscribe(email: string, recaptchaToken: string): Observable<any> {
+    return this.http.post(this.apiUrl + '/subscribe', {email: email, recaptchaToken: recaptchaToken});
   }
 
   public testCall(): Observable<any> {
