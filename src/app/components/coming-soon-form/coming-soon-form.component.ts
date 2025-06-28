@@ -5,6 +5,8 @@ import {NgIf} from '@angular/common';
 import {ApiService} from '../../api.service';
 import {HttpErrorResponse} from '@angular/common/http';
 
+declare var grecaptcha: any;
+
 @Component({
   selector: 'app-coming-soon-form',
   imports: [
@@ -32,17 +34,22 @@ export class ComingSoonFormComponent {
 
     const email = this.form.value.email ?? "";
 
-    this.apiService.subscribe(email).subscribe({
-      next: (response) => {
-        if (response.success) {
-          this.buttonState = 'success';
-          this.toastr.success('You have been subscribed!', 'Success 🎉');
-        }
-      },
-      error: (error: HttpErrorResponse) => {
-        this.buttonState = 'idle';
-        this.toastr.error('Something went wrong. Try again!' + error.message, 'Error 😢');
-      }
-    });
+
+    grecaptcha.ready(() => {
+      grecaptcha.execute('6LfQr20rAAAAAAw30LhJyZwxrSvgVHV0bgATnlWC', {action: 'newsletterSignup'}).then((token: string) => {
+        this.apiService.subscribe(email, token).subscribe({
+          next: (response) => {
+            if (response.success) {
+              this.buttonState = 'success';
+              this.toastr.success('You have been subscribed!', 'Success 🎉');
+            }
+          },
+          error: (error: HttpErrorResponse) => {
+            this.buttonState = 'idle';
+            this.toastr.error('Something went wrong. Try again!' + error.message, 'Error 😢');
+          }
+        });
+      })
+    })
   }
 }
