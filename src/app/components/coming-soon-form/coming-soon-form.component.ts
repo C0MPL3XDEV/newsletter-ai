@@ -46,7 +46,7 @@ export class ComingSoonFormComponent {
           },
           error: (error: HttpErrorResponse) => {
             this.buttonState = 'idle';
-            this.toastr.error('Something went wrong. Try again!' + error.error.message, 'Error 😢');
+            this.toastr.error('Something went wrong. Try again!' + " " + error.error.message, 'Error 😢');
           }
         });
       })
